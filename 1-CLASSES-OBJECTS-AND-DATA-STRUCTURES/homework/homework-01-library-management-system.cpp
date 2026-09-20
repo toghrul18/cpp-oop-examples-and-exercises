@@ -35,11 +35,55 @@ using namespace std;
 
 
 
-/*  Solution */
+class Book {
+    private:
+    string title;
+    string author;
+    int PublicationYear;
+    string ISBN;
+
+    public:
+     // Default constructor
+    Book() {
+        title = "Unknown";
+        author = "Unknown";
+        PublicationYear = 0;
+        ISBN = "Unknown";
+    }
+    // Constructor
+    Book (string Booktitle, string Bookauthor, int BookPublicationYear, string BookISBN)
+    : title(Booktitle), author(Bookauthor), PublicationYear(BookPublicationYear), ISBN(BookISBN){
+
+    }
+
+    // Setters
+    void setBookDetails(string Booktitle, string Bookauthor, int BookPublicationYear, string BookISBN) {
+        title = Booktitle;
+        author = Bookauthor;
+        PublicationYear = BookPublicationYear;
+        ISBN = BookISBN;
+    }
+        
+      
+      
+       
+      
+    
+    // Display
+
+    void displayBookDetails(){
+
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        cout << "Publication Year: " << PublicationYear << endl;
+        cout << "ISBN: " << ISBN << endl;
+    }
+
+    };
 
 
 
-int main() {
+ int main() {
 
     /*      Example usage:     */
     Book book1;
