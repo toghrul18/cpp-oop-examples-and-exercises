@@ -37,7 +37,67 @@ using namespace std;
 
 
 
-/*  Solution */
+class Employee {
+private:
+int ID;
+string Name;
+string Designation;
+float Salary;
+
+public:
+
+// Default constructor
+    Employee() {
+        ID =0;
+        Name = "Unknown";
+        Designation = "Unknown";
+        Salary = 0;
+    }
+
+    // Constructor
+     Employee(int EmployeeID, string EmployeeName, string EmployeeDesignation, int EmployeeSalary):
+     ID(EmployeeID), Name(EmployeeName), Designation(EmployeeDesignation), Salary(EmployeeSalary){
+
+    }
+
+    // Setters
+    void setID(int EmployeeID) {
+        ID = EmployeeID;
+    }
+    void setName(string EmployeeName) {
+        Name = EmployeeName;
+    }
+    void setDesignation(string EmployeeDesignation) {
+        Designation = EmployeeDesignation;
+    }
+    void setSalary(int EmployeeSalary) {
+        Salary = EmployeeSalary;
+    }
+
+    // Getters
+
+    int getID () {
+        return ID;
+    }
+    string getName () {
+        return Name;
+    }
+    string getDesignation () {
+        return Designation;
+    }
+    int getSalary () {
+        return Salary;
+    }
+    // Display
+    void displayDetails() {
+    cout << "ID: " << ID << endl;
+    cout << "Name: " << Name << endl;
+    cout << "Designation: " << Designation << endl;
+    cout << "Salary: " << Salary << endl;
+}
+
+
+};
 
 
 
