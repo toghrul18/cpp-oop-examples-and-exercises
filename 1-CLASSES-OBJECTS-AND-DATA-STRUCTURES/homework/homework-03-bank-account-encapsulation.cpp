@@ -28,16 +28,54 @@ class BankAccount {
     public:
         // Constructor
         BankAccount(int accountNumber, const string &holderName, double initialBalance) {
-            // TODO: Initialize member variables
+            this->accountNumber = accountNumber;
+            this->holderName = holderName;
+            this->balance = initialBalance;
+    
+
         }
 
-        // Member functions
-        // TODO: Implement member functions for deposit, withdraw, and check balance
+         // Setters
+    void setaccountNumber(int accountNumber) {
+        this -> accountNumber = accountNumber;
+    }
+    void setholdername(string &holdername) {
+        this -> holderName = holdername;
+    }
+    void setinitialBalance(double initialBalance) {
+        this -> balance = initialBalance;
+    }
+
+    // Display
+    void displayBankAccountDetails() {
+    cout << "accountNumber: " << accountNumber << endl;
+    cout << "holderName: " << holderName << endl;
+    cout << "initialBalance: " << balance << endl;
+   
+}
+ void deposit(double amount) {
+        balance += amount;
+    }
+
+
+    void withdraw(double amount) {
+        balance -= amount;
+    }
+
+
+    
+    double checkBalance() {
+        return balance;
+    }
+    
+    
 };
 
 
 
 int main() {
+
+    
 
     // TODO: Create an instance of the BankAccount class
     // TODO: Test the deposit, withdraw, and check balance operations
@@ -55,7 +93,33 @@ int main() {
         This exercise will help you practice encapsulation and understand how to hide 
         implementation details while exposing a controlled interface to the users of your class!
     */
+ BankAccount BankAccount1(1001, "John Doe", 1000.0); ;
+   
 
+   
+    // Display book details
+    
+
+    cout << "BankAccount1 Details: " << endl;
+    BankAccount1.displayBankAccountDetails();
+    cout << endl;
     return 0;
+
+    BankAccount1.deposit(500.0);
+
+    cout << "After deposit:" << endl;
+    cout << "Balance: " << BankAccount1.checkBalance() << endl;
+
+    cout << endl;
+
+
+    // Withdraw money
+    BankAccount1.withdraw(200.0);
+
+    cout << "After withdrawal:" << endl;
+    cout << "Balance: " << BankAccount1.checkBalance() << endl;
+
+    cout << endl;
+
 }
 
