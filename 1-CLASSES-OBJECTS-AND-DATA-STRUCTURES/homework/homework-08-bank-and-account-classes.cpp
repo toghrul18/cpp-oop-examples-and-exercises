@@ -50,7 +50,74 @@ using namespace std;
     Solution 
 */
 
+class BankAccount {
+private:
+int accountNumber;
+double balance;
 
+public:
+
+// Default constructor
+    BankAccount() {
+        accountNumber = 0;
+        balance = 0;
+    }
+
+// Constructor
+
+BankAccount (int accNumber) {
+    accountNumber = accNumber;
+    balance = 0;
+}
+
+//Functions
+
+ void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        balance -= amount;
+    }
+
+    void displayBalance() {
+        cout << "Account: " << accountNumber
+             << ", Balance: " << balance << endl;
+    }
+
+};
+
+class Bank {
+private:
+BankAccount* accounts;
+int numAccounts;
+
+public:
+    Bank(int num) {
+        numAccounts = num;
+        accounts = new BankAccount[num];
+    }
+
+    ~Bank() {
+        delete[] accounts;
+    }
+    
+
+    void performTransactions() {
+        accounts[0].deposit(1000);
+        accounts[1].deposit(500);
+        accounts[2].deposit(200);
+        accounts[2].withdraw(50);
+    }
+
+    void displayAllBalances() {
+        for (int i = 0; i < numAccounts; i++) {
+            accounts[i].displayBalance();
+        }
+    }
+
+
+};
 
 int main() {
 

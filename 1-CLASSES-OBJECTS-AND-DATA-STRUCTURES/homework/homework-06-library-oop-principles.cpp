@@ -39,7 +39,48 @@ using namespace std;
 /* Solution */
 
 class Book {
-    // TODO:
+   private:
+    string title;
+    string author;
+    int PublicationYear;
+   
+
+    public:
+     // Default constructor
+    Book() {
+        title = "Unknown";
+        author = "Unknown";
+        PublicationYear = 0;
+        
+    }
+    // Constructor
+    Book (string Booktitle, string Bookauthor, int BookPublicationYear)
+    : title(Booktitle), author(Bookauthor), PublicationYear(BookPublicationYear){
+
+    }
+
+     // Setters
+    void setBookDetails(string Booktitle, string Bookauthor, int BookPublicationYear) {
+        title = Booktitle;
+        author = Bookauthor;
+        PublicationYear = BookPublicationYear;
+        
+    }
+        
+      
+      
+       
+      
+    
+    // Display
+
+    void display(){
+
+        cout << "Title: " << title << endl;
+        cout << "Author: " << author << endl;
+        cout << "Publication Year: " << PublicationYear << endl;
+       
+    }
 };
 
 
@@ -50,13 +91,30 @@ int main() {
 
     cout << "Enter details for " << librarySize << " books:" << endl;
     for (int i = 0; i < librarySize; ++i) {
-        // TODO: 
+         string title;
+        string author;
+        int year;
+
+        cout << "\nBook " << i + 1 << endl;
+
+        cout << "Enter title: ";
+        getline(cin, title);
+
+        cout << "Enter author: ";
+        getline(cin, author);
+
+        cout << "Enter publication year: ";
+        cin >> year;
+        cin.ignore();
+
+        
+        library[i] = Book(title, author, year);
     }
 
     cout << endl << "Library Contents:" << endl;
     for (int i = 0; i < librarySize; ++i) {
         cout << "Book " << i + 1 << ":" << endl;
-        // TODO:
+        library[i].display();
     }
 
 }

@@ -11,7 +11,7 @@ private:
     string customerName;
     vector<Product> products;
 
-    public:
+public:
     // Constructor
     Order(int orderID, const string& customerName) {
         this->orderID = orderID;
@@ -33,9 +33,9 @@ private:
     }
 
     // Getter
-    vector<Product> getProducts() const {
-        return products;
-    }
+    vector<Product> getOrderedProducts() const {
+    return products;
+}
 
     int getOrderID() const {
         return orderID;
@@ -43,5 +43,16 @@ private:
 
     string getCustomerName() const {
         return customerName;
+    }
+
+    // Calculate total
+    double calculateOrderTotal() const {
+        double total = 0;
+
+        for (const Product& product : products) {
+            total += product.getPrice();
+        }
+
+        return total;
     }
 };

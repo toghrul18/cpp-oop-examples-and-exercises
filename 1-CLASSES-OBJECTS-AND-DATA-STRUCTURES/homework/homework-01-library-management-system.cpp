@@ -91,6 +91,7 @@ class Book {
 
     Book book2;
     book2.setBookDetails("To Kill a Mockingbird", "Harper Lee", 1960, "9780060935467");
+    
 
     // Display book details
     cout << "Book 1 Details:" << endl;

@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 
@@ -5,42 +6,42 @@ using namespace std;
 
 class Product {
     private:
-    int productID;
-    string productName;
-    float productPrice;
+    int ProductID;
+    string ProductName;
+    float ProductPrice;
 
     public:
     // Constructor
     Product(int id, string name, float price) {
-        productID = id;
-        productName = name;
-        productPrice = price;
+        ProductID = id;
+        ProductName = name;
+        ProductPrice = price;
     }
 
     // Setters
     void setID(int id) {
-        productID = id;
+        ProductID = id;
     }
 
     void setName(const string& name) {
-        productName = name;
+        ProductName = name;
     }
 
     void setPrice(float price) {
-        productPrice = price;
+        ProductPrice = price;
     }
 
     // Getters
     int getID() const {
-        return productID;
+        return ProductID;
     }
 
-    string getName() const {
-        return productName;
+    string getProductName() const {
+        return ProductName;
     }
 
     float getPrice() const {
-        return productPrice;
+        return ProductPrice;
     }
 
 };

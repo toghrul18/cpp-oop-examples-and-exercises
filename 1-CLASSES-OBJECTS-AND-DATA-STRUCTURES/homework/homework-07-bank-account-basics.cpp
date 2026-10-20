@@ -35,8 +35,76 @@ using namespace std;
     Solution 
 */
 class BankAccount {
-}
+private:
+    int accountNumber;
+    double balance;
 
+    // Static variable shared by all objects
+    static int accountCount;
+
+public:
+    // Constructor
+    BankAccount(int accountNumber, double initialBalance = 0) {
+        this->accountNumber = accountNumber;
+        this->balance = initialBalance;
+
+        accountCount++;
+        cout << "Account created: " << accountNumber << endl;
+    }
+
+    // Destructor
+    ~BankAccount() {
+        cout << "Bank account " << accountNumber
+             << " is closed" << endl;
+
+        accountCount--;
+
+        if (accountCount == 0) {
+            cout << "All BankAccount objects destroyed"
+                 << endl;
+        }
+    }
+
+    // Setters
+    void setAccountNumber(int accountNumber) {
+        this->accountNumber = accountNumber;
+    }
+
+    void setBalance(double initialBalance) {
+        if (initialBalance >= 0) {
+            this->balance = initialBalance;
+        }
+    }
+
+    // Display
+    void displayBankAccountDetails() {
+        cout << "Account number: " << accountNumber << endl;
+        cout << "Balance: " << balance << endl;
+    }
+
+    // Deposit
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    // Withdraw
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        } else {
+            cout << "Invalid withdrawal" << endl;
+        }
+    }
+
+    // Getter
+    double getBalance() {
+        return balance;
+    }
+
+};
+int BankAccount::accountCount = 0;
 
 int main() {
 
